@@ -1,0 +1,11 @@
+.auto-complete{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.submit-button
+{
+    margin: 1rem;
+}
