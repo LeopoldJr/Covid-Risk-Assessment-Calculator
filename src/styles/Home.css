@@ -1,5 +1,7 @@
-.Home-Section{
+.Home-Sections{
     width: 75%;
     margin: 0 auto;
+    margin-top: 3rem;
+    padding-bottom: 10rem;
     min-height: 100vh;
 }

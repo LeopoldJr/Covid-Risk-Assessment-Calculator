@@ -1,16 +1,14 @@
 .Calculator{
-    
     width: 75%;
     margin: 0 auto;
     margin-top: 3rem;
-    margin-bottom: 10rem;
+    padding-bottom: 10rem;
     min-height: 100vh;
 }
 
 .reviews{
     display:flex;
     flex-flow: column nowrap;
-    /* justify-content: flex-start; */
     align-items: flex-start;
 }
 

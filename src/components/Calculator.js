@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/Calculator.css';
 import Form from "./Form.js"
-import Fragment from 'render-fragment';
 
 export default class Calculator extends Component {
 
@@ -16,7 +15,6 @@ export default class Calculator extends Component {
 
 
   Compute(Reviews, County, CountyCases, CountyRiskLevel, CountyInfectionRate, CountyCaseDensity, CountyVaccinationsCompleted ) {
-
     
     if (typeof(CountyVaccinationsCompleted) !== "number" ){
         this.setState({ countyVaccinationsCompleted: `0` });
@@ -26,12 +24,10 @@ export default class Calculator extends Component {
     this.setState({ county: `${County}` });
     this.setState({ countyCases: `${CountyCases}` });
     this.setState({ countyRiskLevel: `${CountyRiskLevel}` });
-    //console.log(typeof(CountyVaccinationsCompleted));
-    //this.setState({ countyVaccinationsCompleted: `${CountyVaccinationsCompleted}` });
     this.setState({ countyCaseDensity: `${CountyCaseDensity}` });
     this.setState({ countyInfectionRate: `${CountyInfectionRate}` });
-    this.state.reviews = Reviews;
-    //console.log(this.state.countyInfectionRate);
+    this.setState({ reviews: Reviews });
+    console.log(this.state.reviews[0][0]);
   }
   
 
@@ -52,13 +48,13 @@ export default class Calculator extends Component {
         <h3 className="left-h2" >This business {this.state.reviews[0][0] ? 'does' : 'does not'} Social Distance</h3>
         <h3 className="left-h2" >This business {this.state.reviews[0][1] ? 'is' : 'is not'} currently busy</h3>
         <h3 className="left-h2" >This business {this.state.reviews[0][2] ? 'does' : 'does not'} currently offer pickup options</h3>
-        <h3 className="left-h2" ><h2 className="bold">Comments:</h2>{this.state.reviews[0][3]}</h3>
+        <h2 className="bold">Comments:</h2><h3 className="left-h2" >{this.state.reviews[0][3]}</h3>
         <br/>
         <h2 className="bold">Submitted By Anonymous</h2>
         <h3 className="left-h2" >This business {this.state.reviews[1][0] ? 'does' : 'does not'} Social Distance</h3>
         <h3 className="left-h2" >This business {this.state.reviews[1][1] ? 'is' : 'is not'} currently busy</h3>
         <h3 className="left-h2" >This business {this.state.reviews[1][2] ? 'does' : 'does not'} currently offer pickup options</h3>
-        <h3 className="left-h2" ><h2 className="bold">Comments:</h2>{this.state.reviews[1][3]}</h3>
+        <h2 className="bold">Comments:</h2><h3 className="left-h2" >{this.state.reviews[1][3]}</h3>
         </div>
 
       </div>
@@ -66,5 +62,3 @@ export default class Calculator extends Component {
     );
   }
 }
-
-//export default Calculator;
